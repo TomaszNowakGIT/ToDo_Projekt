@@ -10,7 +10,7 @@ let $cancel_btn;
 let $close_btn;
 let $popup;
 let $edit_input;
-let index = 1;
+let index = 0;
 let currentTodo = 0;
 
 const initialList = ['Pozmywaj naczynia', 'Zrób zakupy' ,'Wyprowadź psa'];
