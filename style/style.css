@@ -1,0 +1,108 @@
+body {
+  background-image: url("../img/bgmin.jpg");
+  font-size: 18px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.todo {
+  width: 60%;
+}
+
+.todo_title {
+  color: white;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info {
+  width: 30%;
+}
+
+.weather {
+  width: 30%;
+}
+
+.input-field {
+  width: 90%;
+}
+
+.collection .collection-item {
+  opacity: 0.7;
+  display: block;
+  justify-content: unset;
+}
+
+textarea.materialize-textarea {
+  color: white;
+
+}
+.popup_title{
+  color:black;
+  text-align: center;
+}
+.popup{
+  background-color: white;
+  opacity: 0.98;
+  width:50%;
+  height:200px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10%;
+  z-index: 1;
+  border-radius: 3px;
+  transition: 2s;
+}
+.x{
+  content: "x";
+  display:block;
+  position:absolute;
+  right: 10px;
+  top: 0px;
+  cursor:pointer;
+}
+.x:hover{
+  color:#1976d2;
+  transition: 1s;
+
+}
+.popup_button{
+  text-align: center;
+
+}
+.strike {
+  position: relative;
+  display: none
+}
+@media screen and (min-width: 768px) {
+  .collection .collection-item {
+    opacity: 0.7;
+    display: flex;
+    justify-content: space-between;
+  }
+  .strike {
+    display: inline-block;
+  }
+  .strike::before {
+  content: '';
+  border-bottom: 3px solid #1976d2;
+  width: 50%;
+  position: absolute;
+  left: 1%;
+  top: 40%;
+  }
+}
