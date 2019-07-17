@@ -100,7 +100,7 @@ textarea.materialize-textarea {
   .done::before {
   content: '';
   border-bottom: 3px solid #1976d2;
-  left: 0;
+  left: 2%;
   margin-top: calc(0.125em / 2 * -1);
   position: absolute;
   right: 0;
