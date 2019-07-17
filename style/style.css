@@ -88,7 +88,8 @@ textarea.materialize-textarea {
 }
 .done {
   position: relative;
-  display: none
+  display: none;
+  text-decoration-line: line-through;
 }
 #list{
   text-align: center;
@@ -101,6 +102,7 @@ textarea.materialize-textarea {
   }
   .done {
     display: inline-block;
+    text-decoration-line: none;
   }
   .done::before {
   content: '';
@@ -110,7 +112,7 @@ textarea.materialize-textarea {
   position: absolute;
   right: 0;
   top: 40%;
-  width: 50%;
+  width: 45%;
   }
   .info {
     display: flex;
