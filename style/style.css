@@ -12,7 +12,7 @@ body {
 }
 
 .todo {
-  width: 60%;
+  width: 80%;
 }
 
 .todo_title {
@@ -27,11 +27,13 @@ body {
 }
 
 .info {
-  width: 30%;
+  display: none;
+
 }
 
 .weather {
-  width: 30%;
+  display: none;
+
 }
 
 .input-field {
@@ -88,6 +90,9 @@ textarea.materialize-textarea {
   position: relative;
   display: none
 }
+#list{
+  text-align: center;
+}
 @media screen and (min-width: 768px) {
   .collection .collection-item {
     opacity: 0.7;
@@ -106,5 +111,20 @@ textarea.materialize-textarea {
   right: 0;
   top: 40%;
   width: 50%;
+  }
+  .info {
+    display: flex;
+    width: 30%;
+  }
+  
+  .weather {
+    display:flex;
+    width: 30%;
+  }
+  .todo {
+    width: 60%;
+  }
+  #list{
+    text-align: unset;
   }
 }
