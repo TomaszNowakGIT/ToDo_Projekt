@@ -89,7 +89,7 @@ function createElement(title) {
 
     let newButtonDone  = document.createElement('button');
     newButtonDone.innerText = 'done';
-    newButtonDone.classList.add('done','btn-small','waves-effect','waves-light','material-icons');
+    newButtonDone.classList.add('doneb','btn-small','waves-effect','waves-light','material-icons');
     newButtonDone.id = 'done_' + index;
     newDiv.appendChild(newButtonDone);
 
@@ -101,7 +101,7 @@ function listClickManager(event) {
         removeListElement(event.target.parentElement.parentElement.id);
     }else if (event.target.className === 'edit btn-small waves-effect waves-light material-icons') {
         editListElement(event.target.parentElement.parentElement.id)
-    }else if (event.target.className === 'done btn-small waves-effect waves-light material-icons') {
+    }else if (event.target.className === 'doneb btn-small waves-effect waves-light material-icons') {
         markElementAsDone(event.target.parentElement.parentElement.id)
     }
 }
