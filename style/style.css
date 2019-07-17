@@ -57,17 +57,24 @@ textarea.materialize-textarea {
 .popup{
   background-color: white;
   opacity: 0.98;
-  width:50%;
-  height:200px;
+  width:60%;
+  height:250px;
   display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: absolute;
   top: 10%;
+  left: 20%;
   z-index: 1;
   border-radius: 3px;
-  transition: 2s;
+  transition: 1s;
+  animation: none;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:0.98;}
 }
 .x{
   content: "x";
@@ -128,5 +135,11 @@ textarea.materialize-textarea {
   }
   #list{
     text-align: unset;
+  }
+  .popup{
+  width:50%;
+  height:200px;
+  left: unset;
+  animation: fadeIn 0.3s;
   }
 }
