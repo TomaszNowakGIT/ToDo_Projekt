@@ -141,10 +141,10 @@ function declineChanges() { //niepotrzebna raczej
 
 function markElementAsDone(id) {
     let done = document.getElementById(id);
-    done.style.textDecoration = 'line-through';
-    done.style.textDecorationColor ='#1E88E5';
+    //done.style.textDecoration = 'line-through';
+    //done.style.textDecorationColor ='#1E88E5';
     //done.classList.add('done');
-    done.classList.add('strike');
+    //done.classList.add('strike');
     done.classList.toggle('done')
 
 }

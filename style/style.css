@@ -84,7 +84,7 @@ textarea.materialize-textarea {
   text-align: center;
 
 }
-.strike {
+.done {
   position: relative;
   display: none
 }
@@ -94,10 +94,10 @@ textarea.materialize-textarea {
     display: flex;
     justify-content: space-between;
   }
-  .strike {
+  .done {
     display: inline-block;
   }
-  .strike::before {
+  .done::before {
   content: '';
   border-bottom: 3px solid #1976d2;
   width: 50%;
