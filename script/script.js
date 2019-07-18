@@ -1,4 +1,3 @@
-// Zmienne globalne
 let $list;
 let $input;
 let $add_todo;
@@ -13,7 +12,7 @@ let $edit_input;
 let index = 0;
 let currentTodo = 0;
 
-const initialList = ['Pozmywaj naczynia', 'Zrób zakupy' ,'Wyprowadź psa'];
+const initialList = ['Pozmywaj naczynia', 'Zrób zakupy', 'Wyprowadź psa'];
 
 function main() {
     prepareDOMElements();
@@ -36,11 +35,11 @@ function prepareDOMElements() {
 }
 
 function prepareDOMEvents() {
-    $add_todo.addEventListener('click',addButtonClickHandler);
-    $list.addEventListener('click',listClickManager);
-    $cancel_btn.addEventListener('click',closePopup);
-    $accept_btn.addEventListener('click',acceptChangeHandler);
-    $close_btn.addEventListener('click',closePopup);
+    $add_todo.addEventListener('click', addButtonClickHandler);
+    $list.addEventListener('click', listClickManager);
+    $cancel_btn.addEventListener('click', closePopup);
+    $accept_btn.addEventListener('click', acceptChangeHandler);
+    $close_btn.addEventListener('click', closePopup);
 }
 
 function prepareInitialList() {
@@ -50,8 +49,8 @@ function prepareInitialList() {
 }
 
 function addButtonClickHandler() {
-    if ($input.value.trim()){
-    addNewElementToList($input.value);
+    if ($input.value.trim()) {
+        addNewElementToList($input.value);
     }
 }
 
@@ -70,60 +69,63 @@ function createElement(title) {
     newSpan.innerText = title;
     newElement.appendChild(newSpan)
 
-    let newDiv  = document.createElement('div');
+    let newDiv = document.createElement('div');
     newDiv.classList.add('all_buttons');
     newDiv.id = 'all_btn';
     newElement.appendChild(newDiv);
-    
-    let newButtonDelete  = document.createElement('button');
+
+    let newButtonDelete = document.createElement('button');
     newButtonDelete.innerText = 'delete';
-    newButtonDelete.classList.add('delete','btn-small','waves-effect','waves-light','material-icons','delete');
+    newButtonDelete.classList.add('delete', 'btn-small', 'waves-effect', 'waves-light', 'material-icons', 'delete');
     newButtonDelete.id = 'delete_' + index;
     newDiv.appendChild(newButtonDelete);
 
-    let newButtonEdit  = document.createElement('button');
+    let newButtonEdit = document.createElement('button');
     newButtonEdit.innerText = 'edit';
-    newButtonEdit.classList.add('edit','btn-small','waves-effect','waves-light','material-icons','edit');
+    newButtonEdit.classList.add('edit', 'btn-small', 'waves-effect', 'waves-light', 'material-icons', 'edit');
     newButtonEdit.id = 'edit_' + index;
     newDiv.appendChild(newButtonEdit);
 
-    let newButtonDone  = document.createElement('button');
+    let newButtonDone = document.createElement('button');
     newButtonDone.innerText = 'done';
-    newButtonDone.classList.add('doneb','btn-small','waves-effect','waves-light','material-icons');
+    newButtonDone.classList.add('doneb', 'btn-small', 'waves-effect', 'waves-light', 'material-icons');
     newButtonDone.id = 'done_' + index;
     newDiv.appendChild(newButtonDone);
 
     return newElement;
 
 }
+
 function listClickManager(event) {
-           if(event.target.className === 'delete btn-small waves-effect waves-light material-icons') {
+    if (event.target.className === 'delete btn-small waves-effect waves-light material-icons') {
         removeListElement(event.target.parentElement.parentElement.id);
-    }else if (event.target.className === 'edit btn-small waves-effect waves-light material-icons') {
+    } else if (event.target.className === 'edit btn-small waves-effect waves-light material-icons') {
         editListElement(event.target.parentElement.parentElement.id)
-    }else if (event.target.className === 'doneb btn-small waves-effect waves-light material-icons') {
+    } else if (event.target.className === 'doneb btn-small waves-effect waves-light material-icons') {
         markElementAsDone(event.target.parentElement.parentElement.id)
     }
 }
+
 function removeListElement(id) {
-document.getElementById(id).remove();
+    document.getElementById(id).remove();
 }
 
 function editListElement(id) {
     let edit_text = document.getElementById(id);
-    addDataToPopup(edit_text.firstChild.innerText,id);
+    addDataToPopup(edit_text.firstChild.innerText, id);
     currentTodo = id;
     openPopup();
 }
-function addDataToPopup(title,id) {
-    $edit_input.value = title,id;
+
+function addDataToPopup(title, id) {
+    $edit_input.value = title, id;
 }
 
 function acceptChangeHandler() {
     let newText = $edit_input.value
     var todoEditText = document.querySelector('#' + currentTodo + ' span');
     todoEditText.innerText = newText;
-closePopup()
+    closePopup()
 
 }
 
@@ -135,16 +137,9 @@ function closePopup() {
     $popup.style.display = "none";
 }
 
-function declineChanges() { //niepotrzebna raczej
-    // closePopup()
-}
 
 function markElementAsDone(id) {
     let done = document.getElementById(id);
-    //done.style.textDecoration = 'line-through';
-    //done.style.textDecorationColor ='#1E88E5';
-    //done.classList.add('done');
-    //done.classList.add('strike');
     done.classList.toggle('done')
 
 }
